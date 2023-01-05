@@ -1,0 +1,38 @@
+{
+  "name": "typescript-express",
+  "version": "1.0.0",
+  "description": "Node.js setup with Express and Typescript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build":"rimraf dish && tsc",
+    "preserve":"npm run build",
+    "serve":"cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
+    "prestart":"npm run build",
+    "start":"cross-env NODE_ENV=production node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgalabeA/node-typescript-express.git"
+  },
+  "author": "Kgalabe Mogodi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kgalabeA/node-typescript-express/issues"
+  },
+  "homepage": "https://github.com/kgalabeA/node-typescript-express#readme",
+  "dependencies": {
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.18",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
